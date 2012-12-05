@@ -1,0 +1,32 @@
+
+--
+-- Database: `test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `course`
+--
+
+CREATE TABLE IF NOT EXISTS `is-it-vatable` (
+  `prod-id` int(11) NOT NULL AUTO_INCREMENT,
+  `product` varchar(200) NOT NULL DEFAULT '',
+  `vatable` varchar(3) NOT NULL DEFAULT '',
+  PRIMARY KEY (`prod-id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `is-it-vatable` (`prod_id`, `product`, ) VALUES
+(1, 'leaflety', 'yes'),
+(2, 'brochure', 'yes'),
+(3, 'folder', 'no'),
+(4, 'lever arch folder', 'no'),
+(5, 'a4 leaflet', 'no'),
+(6, 'a5 leafet', 'yes'),
+(7, 'a2 leaflet', 'no'),
+(8, 'a1 leaflet', 'no'),
+(9, 'presentation', 'yes');

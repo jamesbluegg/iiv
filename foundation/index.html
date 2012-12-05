@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Is It Vatable</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <!-- typekit 
+  <script type="text/javascript" src="//use.typekit.net/wry2lrs.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  -->
+<script type="text/javascript" src="js/jquery.watermark.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function() {
+
+        $("#faq_search_input").watermark("Begin Typing to Search");
+
+        $("#faq_search_input").keyup(function()
+        {
+        var faq_search_input = $(this).val();
+        var dataString = 'keyword='+ faq_search_input;
+        if(faq_search_input.length>3)
+
+        {
+        $.ajax({
+        type: "GET",
+        url: "ajax-search.php",
+        data: dataString,
+        beforeSend:  function() {
+
+        $('input#faq_search_input').addClass('loading');
+
+        },
+        success: function(server_response)
+        {
+
+        $('#searchresultdata').html(server_response).show();
+        $('span#faq_category_title').html(faq_search_input);
+
+        if ($('input#faq_search_input').hasClass("loading")) {
+         $("input#faq_search_input").removeClass("loading");
+                } 
+
+        }
+        });
+        }return false;
+        });
+  });
+      
+  </script>
+</head>
+<body>
+  
+  
+  
+  <!-- logo -->
+    
+  <div class="row">
+    <div class="twelve columns logo">
+     <img src="images/is-it-vatable.png">
+    </div>
+  </div>
+
+  <!-- hidden answer -->
+
+  <div class="full-width1">
+    <div class="topjaw"></div>
+    <div id="mouth">
+      <div id="searchresultdata" class="faq-articles"> </div>
+    </div>
+      <div class="bottomjaw"></div>
+  </div>
+
+  <!-- Second Band (Image Left with Text) -->
+
+  <div class="row">
+    <div class="twelve columns question">
+      <h1>Do you need to charge for VAT? Find out instantly...</h1>
+    </div>
+  </div>
+
+  <!-- input field -->
+
+  <div class="row">
+    <div class="twelve columns">
+      <div class="row collapse">
+        <div class="eight mobile-three columns offset-by-one">
+          <input type="text" placeholder="Search a printed item (eg. Brochure)" id="faq_search_input"/>
+        </div>
+        <div class="two mobile-one columns pull-one">
+          <a class="button expand postfix">Go!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Find out more -->
+
+           
+  <div class="full-width3">
+    <div class="topjaw3">      
+      <div id="clickmore">
+        <a href="#" class="viewme" ><img src="images/down-arrow.png"><p>view all items</p></a>
+      </div></div>
+    <div id="view-more-tab">
+      <div class="show-vat">
+        <h2>VAT? Everything highlighted is exempt from VAT, so that's 0%.....Obviously</h2>
+
+      </div>
+
+
+
+      <div class="row">
+        <div class="twelve columns viewlist">
+          <div class="row">
+            <div class="three columns">
+              <ul>
+                <li>Acceptance cards</li>
+                <li>Account Books</li>
+                <li>Accounts (fully printed)</li>
+                <li>Address books</li>
+                <li>Advertising leaflets</li>
+                <li>Agendas (fully printed)</li>
+                <li>Albums</li>
+                <li>Almanacs</li>
+                <li>Amendment slips</li>
+                <li>Amendments (loose-leaf)</li>
+                <li>Announcement cards</li>
+                <li>Annuals</li>
+                <li>Antique books</li>
+                <li>Antique maps</li>
+                <li>Appointment cards</li>
+                <li>Articles of association (complete in booklet form)</li>
+                <li>Astronomical charts</li>
+                <li>Atlases</li>
+                <li>Autograph albums (uncompleted)</li>
+                <li>Autograph books (completed)</li>
+                <li>Badges</li>
+                <li>Bags, paper</li>
+                <li>Ballot papers</li>
+                <li>Bankersâ€™ draftS</li>
+                <li>Bibliographies</li>
+                <li>Billheads</li>
+                <li>Bills of lading</li>
+                <li>Bills of quantity (blank)</li>
+                <li>Bills of quantity (completed)</li>
+                <li>Binders</li>
+                <li>Bingo cards</li>
+                <li>Biorhythm charts</li>
+                <li>Blotters</li>
+                <li>Book covers</li>
+                <li>Book marks</li>
+                <li>Book tokens</li>
+                <li>Booklets</li>
+                <li>Bookmakersâ€™ tickets</li>
+                <li>Books</li>
+                <li>Brochures</li>
+                <li>BulletinS</li>
+                <li>Business cards</li>
+                <li>Calendars</li>
+                <li>Catalogues</li>
+                <li>Certificates</li>
+                <li>Charts (geographical or topographical)</li>
+                <li>Cheques and cheque books</li>
+                <li>Cigarette cards</li>
+                <li>Circulars</li>
+                <li>Cloakroom tickets</li>
+                <li>Colour cards</li>
+              
+              </ul>
+            </div>
+            <div class="three columns">
+              <ul>
+<li>Colouring books (childrenâ€™s)</li>  
+                <li>Comics</li>
+                <li>Company accounts and reports</li>
+                <li>Compliment slips</li>
+                <li>Copy books</li>
+                <li>Correspondence cards</li>
+                <li>Coupon books</li>
+                <li>Coupons</li>
+                <li>Credit cards</li>
+                <li>Crossword books</li>
+                <li>Delivery notes</li>
+                <li>Diaries (completed)</li>
+                <li>Diaries (unused)</li>
+                <li>Dictionaries</li>
+                <li>Directories (completed)</li>
+                <li>Dividend warrants</li>
+                <li>Dressmaking patterns</li>
+                <li>Election addresses</li>
+                <li>Encyclopaedias</li>
+                <li>Engineersâ€™ plans</li>
+                <li>Envelopes</li>
+                <li>Exercise books</li>
+                <li>Fashion drawings</li>
+                <li>Flash cards</li>
+                <li>Folders</li>
+                <li>Football pool coupons</li>
+                <li>Football programmes</li>
+                <li>Form letters</li>
+                <li>Forms</li>
+                <li>Framed decorative maps</li>
+                <li>Games</li>
+                <li>Geological maps</li>
+                <li>Globes</li>
+                <li>Graph paper</li>
+                <li>Greetings cards</li>
+                <li>Handbills</li>
+                <li>Holiday and tourist guides</li>
+                <li>Hydrographical charts</li>
+                <li>Hymn books</li>
+                <li>Index cards</li>
+                <li>Inlay cards for cassette, CD or video</li>
+                <li>Instruction manuals</li>
+                <li>Insurance cover notes</li>
+                <li>Invitation cards</li>
+                <li>Invoices</li>
+                <li>Journals</li>
+                <li>Labels</li>
+                <li>Leaflets</li>
+                <li>Letter headings</li>
+                <li>Letters (handwritten)</li>
+                <li>Log books (blank)</li>
+                <li>Loose leaf books</li>                
+              </ul>
+            </div>
+            <div class="three columns">
+              <ul>
+                <li>Lottery tickets and cards</li>
+                <li>Magazines</li>
+                <li>Mail order catalogues</li>
+                <li>Manuals</li>
+                <li>Manuscript paper</li>
+                <li>Manuscripts</li>
+                <li>Maps</li>
+                <li>Medical records</li>
+                <li>Membership cards</li>
+                <li>Memo pads</li>
+                <li>Memoranda of association (completed in booklet form)</li>
+                <li>Memorial cards</li>
+                <li>Menu cards</li>
+                <li>Microfiche</li>
+                <li>Microfilm</li>
+                <li>Microform copies</li>
+                <li>Missals</li>
+                <li>Monographs</li>
+                <li>Music</li>
+                <li>Music rolls</li>
+                <li>Music scores</li>
+                <li>Newspapers</li>
+                <li>Note books, pads and paper</li>
+                <li>Order books and forms</li>
+                <li>Orders of Service</li>
+                <li>Painting books (childrenâ€™s)</li>
+                <li>Pamphlets</li>
+                <li>Paper, unprinted</li>
+                <li>Parts of books</li>
+                <li>Pattern cards</li>
+                <li>Periodicals</li>
+                <li>Photograph albums</li>
+                <li>Photographs</li>
+                <li>Picture books</li>
+                <li>Plans Standard-rated</li>
+                <li>Playing cards</li>
+                <li>Poll cards</li>
+                <li>Pools coupons</li>
+                <li>Postcards (whether completed or not)</li>
+                <li>Poster magazines</li>
+                <li>Posters</li>
+                <li>Prayer books</li>
+                <li>Price cards and tags</li>
+                <li>Price lists (fully printed leaflets or brochures)</li>
+                <li>Printed pictures</li>
+                <li>Programmes</li>
+                <li>Questionnaires</li>
+                <li>Rag books (childrenâ€™s)</li>
+                <li>Receipt books and forms</li>
+                <li>Recipe books</li>
+ 
+                <li>Record books</li>               
+              </ul>
+            </div>
+            <div class="three columns">
+              <ul>
+
+                <li>Record labels</li>
+                <li>Record sleeves</li>
+                <li>Registers</li>
+                <li>Rent books</li>
+                <li>Reply-paid coupons and envelopes</li>
+                <li>Reproductions of paintings</li>
+                <li>Road maps</li>
+                <li>Score cards</li>
+                <li>Scrap books (blank)</li>
+                <li>Scrap books (completed)</li>
+                <li>Scrolls (hand-written)</li>
+                <li>Seals</li>
+                <li>Shade cards (unless they contain substantial printed text)</li>
+                <li>Share certificates</li>
+                <li>Shipsâ€™ logs (completed)</li>
+                <li>Sports programmes</li>
+                <li>Staff journals</li>
+                <li>Stamp albums (whether completed or not)</li>
+                <li>Stationery</li>
+                <li>Stationery books</li>
+                <li>Stickers</li>
+                <li>Swatch books</li>
+                <li>Swatch cards</li>
+                <li>Sweepstake tickets</li>
+                <li>Tags</li>
+                <li>Temperature charts</li>
+                <li>Text books</li>
+                <li>Theses</li>
+                <li>Tickets</li>
+                <li>Time cards and sheets</li>
+                <li>Timetables (in book or leaflet form)</li>
+                <li>Tokens Standard-rated (but see paragraph 5.4)</li>
+                <li>Topographical plans</li>
+                <li>Toys</li>
+                <li>Tracts</li>
+                <li>Trade catalogues</li>
+                <li>Trade directories</li>
+                <li>Transcripts</li>
+                <li>Transfers</li>
+                <li>Transparencies</li>
+                <li>Travel brochures</li>
+                <li>Visiting cards</li>
+                <li>Vouchers</li>
+                <li>Wall charts</li>
+                <li>Waste paper</li>
+                <li>Wills</li>
+                <li>Winding cards</li>
+                <li>Wrapping paper</li>
+                <li>Wreath cards</li>
+
+              </ul>
+            </div>
+          </div>
+
+         
+          </div>
+        </div>
+    </div>
+  </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  
+  <footer class="row">
+    <div class="twelve columns">
+
+      </div>
+    </div> 
+  </footer>
+
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/jquery.js"></script>
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <script>
+
+//      $( document ).ready( function()
+//        {
+//         $( '.topjaw' ).hover( function()
+//          {
+//            $('#mouth').animate({ height:'270px'});
+//          },
+//        function()
+//        {
+//          $('#mouth').animate({ height:'24px'});
+//        });
+//      });
+
+        $( document ).ready( function()
+    {
+      $('.viewme').toggle( function()
+      {
+        $('#view-more-tab').animate({ height:'2100px'});
+      },
+    function()
+    {
+      $('#view-more-tab').animate({ height:'60px'});
+    });
+  });
+
+    </script>
+
+</body>
+</html>

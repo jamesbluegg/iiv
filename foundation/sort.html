@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Is It Vatable</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+</head>
+<body>
+<ul id="filters">
+  <li><a href="#" data-filter="*">show all</a></li>
+  <li><a href="#" data-filter=".yes">yes</a></li>
+</ul>
+  <div class="sortable-list">
+    <div id="container">
+      <div class="leaflet yes">leaflet</div>
+      <div class="poster yes">poster</div>
+      <div class="business cards no">business cards</div>
+      <div class="folder no">folder</div>
+      <div class="a6 flyer no">a6 flyer</div> 
+      <div class="a5 flyer no">a5 flyer</div> 
+      <div class="a4 poster yes">a4 poster</div>
+    </div>
+  </div>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="javascripts/jquery.isotope.min.js"></script>
+<script>
+// cache container
+var $container = $('#container');
+// initialize isotope
+$container.isotope({
+  // options...
+});
+
+// filter items when filter link is clicked
+$('#filters a').click(function(){
+  var selector = $(this).attr('data-filter');
+  $container.isotope({ filter: selector });
+  return false;
+});
+</script>
+ 
+</body>
+</html>
